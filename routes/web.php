@@ -24,3 +24,9 @@ Route::get('/', function () {
 Route::get('siswa/index', [App\Http\Controllers\SiswaController::class, 'index'])->name('siswa.index');
 Route::get('siswa/create', [App\Http\Controllers\SiswaController::class, 'create'])->name('siswa.create');
 Route::post('siswa/store', [App\Http\Controllers\SiswaController::class, 'store'])->name('siswa.store');
+
+#rayon
+Route::get('rayon/index', [App\Http\Controllers\RayonController::class, 'index'])->name('rayon.index');
+Route::get('rayon/create', [App\Http\Controllers\RayonController::class, 'create'])->name('rayon.create');
+Route::get('rayon/store', [App\Http\Controllers\RayonController::class, 'store'])->name('rayon.store');
+
