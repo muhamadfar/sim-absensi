@@ -28,5 +28,5 @@ Route::post('siswa/store', [App\Http\Controllers\SiswaController::class, 'store'
 #rayon
 Route::get('rayon/index', [App\Http\Controllers\RayonController::class, 'index'])->name('rayon.index');
 Route::get('rayon/create', [App\Http\Controllers\RayonController::class, 'create'])->name('rayon.create');
-Route::get('rayon/store', [App\Http\Controllers\RayonController::class, 'store'])->name('rayon.store');
+Route::post('rayon/store', [App\Http\Controllers\RayonController::class, 'store'])->name('rayon.store');
 
