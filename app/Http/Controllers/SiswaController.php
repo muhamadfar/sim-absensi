@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Siswa;
+use App\Models\Rombel;
+use Illuminate\Http\Request;
+
 class SiswaController extends Controller
 {
     /**
@@ -24,7 +26,8 @@ class SiswaController extends Controller
      */
     public function create()
     {
-        return view('pages.kesiswaan.siswa.create');
+        $rombels = Rombel::all();
+        return view('pages.kesiswaan.siswa.create', compact('rombels'));
     }
 
     /**
@@ -58,7 +61,9 @@ class SiswaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $rombels = Rombel::all();
+        $datas = Siswa::find($id);
+        return view('pages.kesiswaan.siswa.edit', compact('datas'));
     }
 
     /**
@@ -70,7 +75,11 @@ class SiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $datas = Siswa::findorfail($id);
+        $datas->update($request->all());
+        return redirect('siswa/index')->with('toast_success', 'successfully Update');;
+        
+        $datas->jk = $request->input('jk');
     }
 
     /**
@@ -81,6 +90,8 @@ class SiswaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $datas = Siswa::findOrFail($id);
+        $datas->delete();
+        return redirect('siswa/index');
     }
 }

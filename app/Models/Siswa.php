@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Rombel;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Siswa extends Model
 {
@@ -11,6 +12,10 @@ class Siswa extends Model
     protected $table = 'siswas';
     protected $fillable = ['nis', 'nama', 'rombel', 'rayon', 'jk' ];
 
+    public function rombels()
+    {
+        return $this->belongsTo(Rombel::class);
+    }
 
 }
 
