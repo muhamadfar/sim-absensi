@@ -13,8 +13,8 @@ class SiswaController extends Controller
      */
     public function index()
     {
-        $siswas = Siswa::all();
-        return view('pages.kesiswaan.siswa.index', compact('siswas'));
+        $datas = Siswa::get();
+        return view('pages.kesiswaan.siswa.index', compact('datas'));
     }
 
     /**
@@ -35,7 +35,8 @@ class SiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       Siswa::create($request->all());
+       return redirect()->route('siswa.index')->with('success', 'Berhasil Menyimpan !');
     }
 
     /**

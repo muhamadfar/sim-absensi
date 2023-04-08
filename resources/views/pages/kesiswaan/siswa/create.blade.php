@@ -1,4 +1,4 @@
-@extends('kesiswaan.index')
+@extends('layouts.kesiswaan.app')
 
 @section('content')
 
@@ -9,13 +9,13 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Starter Page</h1>
+            <h1 class="m-0">Input Data Siswa</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
+            {{-- <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/">Home</a></li>
               <li class="breadcrumb-item active">Data Siswa</li>
-            </ol>
+            </ol> --}}
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -28,29 +28,34 @@
         <h3>Create</h3>
         </div>
         <div class="card-body">
-        <form action="{{ route('pages.kesiswaan.siswa.simpandata')}}" method="post" enctype="multipart/form-data">
-            {{ csrf_field() }}
-
-            <div class="input-group">
-              <input type="file" class="form-control mb-3" name="image" id="image">
-              <label class="input-group-text" for="image">Upload</label>
-            </div>
-
+       <form action="{{ route('siswa.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
           <div class="form-group">
-            <input type="text" id="name" name="name" class="form-control" placeholder="Name Product">
+            <input type="text" id="nis" name="nis" class="form-control" placeholder="Nis">
           </div>
 
           <div class="form-group">
-            <input type="number" id="price" name="price" class="form-control" placeholder="Price ">
+            <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama">
           </div>
 
           <div class="form-group">
-            <input type="number" id="stock" name="stock" class="form-control" placeholder="Stock">
+            <input type="text" id="rombel" name="rombel" class="form-control" placeholder="Rombel">
+          </div>
+          
+           <div class="form-group">
+            <input type="text" id="rayon" name="rayon" class="form-control" placeholder="Rayon">
+          </div>
+
+           <div class="form-group">
+             <p>Jenis Kelamin</p>
+              <p><input type='radio' name="jk" value='laki-laki' checked='checked'/> Laki - Laki</p>
+              <p><input type='radio' name="jk" value='perempuan'/> Perempuan</p>
+            </label>
           </div>
 
             <div class="form-group mb-3">
-                <button type="submit" class="btn btn-success">Save Data</button>
-                <a class="btn btn-danger" href="{{route('pages.admin.siswa.index')}}">Cancel</a>
+                <button type="submit" class="btn btn-success">Input</button>
+                <a class="btn btn-danger" href="{{route('siswa.index')}}">Cancel</a>
             </div>
         </form>
       </div>

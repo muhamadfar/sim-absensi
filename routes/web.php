@@ -15,10 +15,12 @@ use App\Http\Controllers\SiswaController;
 */
 
 Route::get('/kesiswaan', function () {
-    return view('layout.kesiswaan.index');
+    return view('layouts.kesiswaan.app');
 });
 Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('/siswa/index', [App\Http\Controllers\SiswaController::class, 'index'])->name('siswa.index');
+Route::get('siswa/index', [App\Http\Controllers\SiswaController::class, 'index'])->name('siswa.index');
+Route::get('siswa/create', [App\Http\Controllers\SiswaController::class, 'create'])->name('siswa.create');
+Route::post('siswa/store', [App\Http\Controllers\SiswaController::class, 'store'])->name('siswa.store');
