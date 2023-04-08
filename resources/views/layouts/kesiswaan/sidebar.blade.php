@@ -67,7 +67,7 @@
                         </span>
                         <span class="menu-text">Data Siswa</span>
                         {{-- <i class="menu-arrow"></i> --}}
-                    </a> 
+                    </a>
                 </li>
                 <li class="menu-item menu-item-submenu" aria-haspopup="true" >
                     <a href="{{ route('rombel.index')}}" class="menu-link menu-toggle">
@@ -85,7 +85,7 @@
                         <span class="menu-text">Data Rombel</span>
                     </a>
                 <li class="menu-item menu-item-submenu" aria-haspopup="true" >
-                    <a href="#" class="menu-link menu-toggle">
+                    <a href="{{ route('rayon.index')}}" class="menu-link menu-toggle">
                         <span class="svg-icon menu-icon">
                             <!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
                             <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

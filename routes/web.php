@@ -39,3 +39,6 @@ Route::get('rombel/edit{id}', [RombelController::class, 'edit'])->name('rombel.e
 Route::post('rombel/update/{id}', [RombelController::class, 'update'])->name('rombel.update');
 Route::post('rombel/destroy/{id}', [RombelController::class, 'destroy'])->name('rombel.destroy');
 
+Route::get('rayon/index', [App\Http\Controllers\RayonController::class, 'index'])->name('rayon.index');
+Route::get('rayon/create', [App\Http\Controllers\RayonController::class, 'create'])->name('rayon.create');
+Route::post('rayon/store', [App\Http\Controllers\RayonController::class, 'store'])->name('rayon.store');
