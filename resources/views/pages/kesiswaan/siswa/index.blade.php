@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="card-body">
-          <table class="table table-bordered datatable">
+          <table class="table table-bordered">
             <tr>
             <th class="text-center">No</th>
             <th class="text-center" scope="col">Nis</th>
@@ -34,11 +34,11 @@
             </tr>
             @foreach ($datas as $siswa)
             <tr>
-              <th class="text-center" scope="row">{{$siswa->id}}</th>
+              <th class="text-center" scope="row">{{ $loop->iteration }}</th>
               <td class="text-center">{{ $siswa->nis }}</td>
               <td class="text-center">{{ $siswa->nama }}</td>
               <td class="text-center">{{ $siswa->rombel->rombel }}</td>
-              <td class="text-center">{{ $siswa->rayon}}</td>
+              <td class="text-center">{{ $siswa->rayon->rayon}}</td>
               <td class="text-center">{{ $siswa->jk }}</td>
                 <td>
               <form class="text-center" action="{{ route('siswa.destroy', $siswa->id)}}" method="POST">@csrf

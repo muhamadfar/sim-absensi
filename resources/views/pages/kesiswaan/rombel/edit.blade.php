@@ -22,18 +22,18 @@
         <h3>Edit</h3>
         </div>
         <div class="card-body">
-       <form action="{{ route('rombel.update', $rombels->id) }}" method="POST">
+       <form action="{{ route('rombel.update', $item->id) }}" method="POST">
         {{ csrf_field() }}
           <div class="form-group">
-            <input type="number" id="nis" name="nis" class="form-control" placeholder="Nis" value="{{ $rombels->nis }}">
+            <input type="number" id="nis" name="nis" class="form-control" placeholder="Nis" value="{{ $item->nis }}">
           </div>
 
           <div class="form-group">
-            <input type="text" id="jurusan" name="jurusan" class="form-control" placeholder="Jurusan" value="{{ $rombels->jurusan }}">
+            <input type="text" id="jurusan" name="jurusan" class="form-control" placeholder="Jurusan" value="{{ $item->jurusan }}">
           </div>
           
            <div class="form-group">
-            <input type="text" id="rombel" name="rombel" class="form-control" placeholder="Rombel" value="{{ $rombels->rombel }}">
+            <input type="text" id="rombel" name="rombel" class="form-control" placeholder="Rombel" value="{{ $item->rombel }}">
           </div>
 
             <div class="form-group mb-3">

@@ -34,12 +34,8 @@
             <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama">
           </div>
 
-          {{-- <div class="form-group">
-            <input type="text" id="rombel" name="rombel" class="form-control" placeholder="Rombel">
-          </div> --}}
-
           <div class="form-group">
-           <select name="rombel" class="form-control" id="rombel">
+           <select name="rombel_id" class="form-control" id="rombel">
             @foreach($rombels as $item)
             <option value="{{$item->id}}">{{$item->rombel}}</option>
             @endforeach
@@ -47,7 +43,11 @@
           </div>
           
            <div class="form-group">
-            <input type="text" id="rayon" name="rayon" class="form-control" placeholder="Rayon">
+           <select name="rayon_id" class="form-control" id="rayon">
+            @foreach($datas as $rayon)
+            <option value="{{$rayon->id}}">{{$rayon->rayon}}</option>
+            @endforeach
+          </select>
           </div>
 
            <div class="form-group">

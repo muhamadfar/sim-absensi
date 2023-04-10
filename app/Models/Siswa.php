@@ -10,12 +10,16 @@ class Siswa extends Model
 {
     use HasFactory;
     protected $table = 'siswas';
-    protected $fillable = ['nis', 'nama', 'rombel', 'rayon', 'jk' ];
+    protected $fillable = ['nis', 'nama', 'rombel_id', 'rayon_id', 'jk' ];
 
-    public function rombels()
+    public function rombel()
     {
         return $this->belongsTo(Rombel::class);
     }
-
+    
+    public function rayon()
+    {
+        return $this->belongsTo(Rayon::class);
+    }
 }
 

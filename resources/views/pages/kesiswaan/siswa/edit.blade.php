@@ -19,7 +19,7 @@
     <div class="content">
     <div class="card card-info card-outline">
         <div class="card-header">
-        <h3>Edit</h3>
+        <h3>Edit Data Siswa</h3>
         </div>
         <div class="card-body">
        <form action="{{ route('siswa.update', $datas->id) }}" method="POST">
@@ -31,13 +31,21 @@
           <div class="form-group">
             <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama" value="{{ $datas->nama }}">
           </div>
-
-          <div class="form-group">
-            <input type="text" id="rombel" name="rombel" class="form-control" placeholder="Rombel"  value="{{ $datas->rombel }}">
-          </div>
           
            <div class="form-group">
-            <input type="text" id="rayon" name="rayon" class="form-control" placeholder="Rayon" value="{{ $datas->rayon }}">
+           <select name="rombel_id" value="{{ $datas->rombel_id }}" class="form-control" id="rombel_id">
+            @foreach($rombels as $item)
+            <option value="{{$item->id}}">{{$item->rombel}}</option>
+            @endforeach
+          </select>
+          </div>
+
+           <div class="form-group">
+           <select name="rayon_id" value="{{ $datas->rayon_id }}" class="form-control" id="rayon_id">
+            @foreach($rayons as $rayon)
+            <option value="{{$rayon->id}}">{{$rayon->rayon}}</option>
+            @endforeach
+          </select>
           </div>
 
            <div class="form-group" value="{{ $datas->jk }}">
@@ -47,8 +55,9 @@
             </label>
           </div>
 
+
             <div class="form-group mb-3">
-                <button type="submit" class="btn btn-success">Edit Data</button>
+                <button type="submit" class="btn btn-success">Edit</button>
                 <a class="btn btn-danger" href="{{route('siswa.index')}}">Cancel</a>
             </div>
         </form>

@@ -32,7 +32,7 @@
             </tr>
             @foreach ($rombels as $item)
             <tr>
-              <th class="text-center" scope="row">{{$item->id}}</th>
+              <th class="text-center" scope="row">{{ $loop->iteration }}</th>
               <td class="text-center">{{ $item->nis }}</td>
               <td class="text-center">{{ $item->jurusan }}</td>
               <td class="text-center">{{ $item->rombel }}</td>

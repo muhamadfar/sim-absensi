@@ -25,10 +25,11 @@ class RombelController extends Controller
         return redirect()->route('rombel.index')->with('success', 'Berhasil Menyimpan !');
     }
 
-    public function edit($id)
+    public function edit($item)
     {
-        $rombels = Rombel::find($id);
-        return view('pages.kesiswaan.rombel.edit', compact('rombels'));
+        $rombels = Rombel::all();
+        $item = Rombel::find($item);
+        return view('pages.kesiswaan.rombel.edit', compact('item'));
     }
 
     public function update(Request $request, $id)

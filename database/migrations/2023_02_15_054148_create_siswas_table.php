@@ -17,8 +17,8 @@ class CreateSiswasTable extends Migration
             $table->id();
             $table->integer('nis');
             $table->string('nama');
-            $table->string('rombel');
-            $table->string('rayon');
+            $table->integer('rombel_id');
+            $table->integer('rayon_id');
             $table->string('jk');
             $table->timestamps();
         });
