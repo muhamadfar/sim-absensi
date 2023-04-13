@@ -11,4 +11,9 @@ class Rayon extends Model
 
     protected $table = 'rayon';
     protected $fillable = ['rayon', 'pembimbing', 'ruangan'];
+
+    public function siswas()
+    {
+       return $this->hasMany(Siswa::class); 
+    }
 }

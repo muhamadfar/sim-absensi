@@ -14,8 +14,8 @@ class RayonController extends Controller
      */
     public function index()
     {
-        $datas = Rayon::get();
-        return view('pages.kesiswaan.rayon.index', compact('datas'));
+        $rayons = Rayon::get();
+        return view('pages.kesiswaan.rayon.index', compact('rayons'));
     }
 
     /**
@@ -59,7 +59,8 @@ class RayonController extends Controller
      */
     public function edit($id)
     {
-        //
+        $rayons = Rayon::find($id);
+        return view('pages.kesiswaan.rayon.edit', compact('rayons'));
     }
 
     /**
@@ -71,7 +72,10 @@ class RayonController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $rayons = Rayon::findorfail($id);
+        $rayons->update($request->all());
+        return redirect('rayon/index')->with('toast_success', 'successfully Update');;
+        
     }
 
     /**
@@ -82,6 +86,8 @@ class RayonController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $rayons = Rayon::findOrFail($id);
+        $rayons->delete();
+        return redirect('rayon/index');
     }
 }

@@ -12,10 +12,6 @@
             <h1 class="m-0">Input Data Siswa</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
-            {{-- <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/">Home</a></li>
-              <li class="breadcrumb-item active">Data Siswa</li>
-            </ol> --}}
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -31,7 +27,7 @@
        <form action="{{ route('siswa.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
           <div class="form-group">
-            <input type="text" id="nis" name="nis" class="form-control" placeholder="Nis">
+            <input type="number" id="nis" name="nis" class="form-control" placeholder="Nis">
           </div>
 
           <div class="form-group">
@@ -39,11 +35,19 @@
           </div>
 
           <div class="form-group">
-            <input type="text" id="rombel" name="rombel" class="form-control" placeholder="Rombel">
+           <select name="rombel_id" class="form-control" id="rombel">
+            @foreach($rombels as $item)
+            <option value="{{$item->id}}">{{$item->rombel}}</option>
+            @endforeach
+          </select>
           </div>
           
            <div class="form-group">
-            <input type="text" id="rayon" name="rayon" class="form-control" placeholder="Rayon">
+           <select name="rayon_id" class="form-control" id="rayon">
+            @foreach($datas as $rayon)
+            <option value="{{$rayon->id}}">{{$rayon->rayon}}</option>
+            @endforeach
+          </select>
           </div>
 
            <div class="form-group">

@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Rayon;
 use App\Models\Siswa;
+use App\Models\Rombel;
+use Illuminate\Http\Request;
+
 class SiswaController extends Controller
 {
     /**
@@ -13,7 +16,7 @@ class SiswaController extends Controller
      */
     public function index()
     {
-        $datas = Siswa::get();
+        $datas = Siswa::with('rombel', 'rayon')->paginate(3);
         return view('pages.kesiswaan.siswa.index', compact('datas'));
     }
 
@@ -24,7 +27,9 @@ class SiswaController extends Controller
      */
     public function create()
     {
-        return view('pages.kesiswaan.siswa.create');
+        $rombels = Rombel::all();
+        $datas = Rayon::all();
+        return view('pages.kesiswaan.siswa.create', compact('rombels', 'datas'));
     }
 
     /**
@@ -58,7 +63,10 @@ class SiswaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $rombels = Rombel::all();
+        $rayons = Rayon::all();
+        $datas = Siswa::find($id);
+        return view('pages.kesiswaan.siswa.edit', compact('datas', 'rombels', 'rayons'));
     }
 
     /**
@@ -70,7 +78,11 @@ class SiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $datas = Siswa::findorfail($id);
+        $datas->update($request->all());
+        return redirect('siswa/index')->with('toast_success', 'successfully Update');;
+        
+        $datas->jk = $request->input('jk');
     }
 
     /**
@@ -81,6 +93,8 @@ class SiswaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $datas = Siswa::findOrFail($id);
+        $datas->delete();
+        return redirect('siswa/index');
     }
 }

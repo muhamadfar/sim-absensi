@@ -22,28 +22,28 @@
             </div>
         </div>
         <div class="card-body">
-          <table class="table table-bordered datatable">
+          <table class="table table-bordered">
             <tr>
-              <th>No</th>
-              <th scope="col">Nis</th>
-              <th scope="col">Nama</th>
-              <th scope="col">Rombel</th>
-              <th scope="col">Rayon</th>
-              <th scope="col">Jenis Kelamin</th>
-              <th scope="col">Aksi</th>
+            <th class="text-center">No</th>
+            <th class="text-center" scope="col">Nis</th>
+              <th class="text-center" scope="col">Nama</th>
+              <th class="text-center" scope="col">Rombel</th>
+              <th class="text-center" scope="col">Rayon</th>
+              <th class="text-center" scope="col">Jenis Kelamin</th>
+              <th class="text-center" scope="col">Aksi</th>
             </tr>
             @foreach ($datas as $siswa)
             <tr>
-              <th scope="row">{{$siswa->id}}</th>
-              <td>{{ $siswa->nis }}</td>
-              <td>{{ $siswa->nama }}</td>
-              <td>{{ $siswa->rombel }}</td>
-              <td>{{ $siswa->rayon}}</td>
-              <td>{{ $siswa->jk }}</td>
+              <th class="text-center" scope="row">{{ $loop->iteration }}</th>
+              <td class="text-center">{{ $siswa->nis }}</td>
+              <td class="text-center">{{ $siswa->nama }}</td>
+              <td class="text-center">{{ $siswa->rombel->rombel }}</td>
+              <td class="text-center">{{ $siswa->rayon->rayon}}</td>
+              <td class="text-center">{{ $siswa->jk }}</td>
                 <td>
-              <form action="#" method="POST">@csrf
-                <a href="#" class="btn btn-primary">Edit</a>
-          <button class="btn btn-danger" onClick="return confirm('Are you sure you want to delete data?')">Delete</button>
+              <form class="text-center" action="{{ route('siswa.destroy', $siswa->id)}}" method="POST">@csrf
+                <a href="{{route('siswa.edit', $siswa->id)}}" class="btn btn-primary">Edit</a>
+          <button class="btn btn-danger" onClick="return confirm('Yakin hapus data?')">Delete</button>
         </form>
               </td>
             </tr>
