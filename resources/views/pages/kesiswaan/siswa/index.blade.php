@@ -17,15 +17,15 @@
     <div class="content">
       <div class="card card-info card-outline">
       <div class="card-header">
-        <div class="card-tools">
-          <a class="btn btn-glass btn-success" href="{{ route('siswa.create')}}">Create</a>
+        <div class ="card-tools">
+          <a class="btn btn-glass btn-success" href ="{{ route('siswa.create')}}">Create</a>
             </div>
         </div>
         <div class="card-body">
           <table class="table table-bordered datatable">
             <tr>
-            <th>No</th>
-            <th scope="col">Nis</th>
+              <th>No</th>
+              <th scope="col">Nis</th>
               <th scope="col">Nama</th>
               <th scope="col">Rombel</th>
               <th scope="col">Rayon</th>
@@ -44,7 +44,7 @@
               <form action="#" method="POST">@csrf
                 <a href="#" class="btn btn-primary">Edit</a>
           <button class="btn btn-danger" onClick="return confirm('Are you sure you want to delete data?')">Delete</button>
-        </form> 
+        </form>
               </td>
             </tr>
             @endforeach

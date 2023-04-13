@@ -4,7 +4,7 @@
     <div class="brand flex-column-auto" id="kt_brand">
         <!--begin::Logo-->
         <a href="#" class="brand-logo">
-            <img alt="Logo" style="width: 195px" src ="{{ asset('assets/media/logos/wikrama.webp') }}" />
+            <img alt="Logo" src="{{ asset('assets/media/logos/logo-dark.png') }}" />
         </a>
         <!--end::Logo-->
         <!--begin::Toggle-->
@@ -25,12 +25,12 @@
     </div>
     <!--end::Brand-->
     <!--begin::Aside Menu-->
-    <div class="aside-menu-wrapper flex-column-fluid pt-1" style="background-color: rgb(41, 41, 118)" id="kt_aside_menu_wrapper">
+    <div class="aside-menu-wrapper flex-column-fluid" id="kt_aside_menu_wrapper">
         <!--begin::Menu Container-->
         <div id="kt_aside_menu" class="aside-menu my-4" data-menu-vertical="1" data-menu-scroll="1" data-menu-dropdown-timeout="500">
             <!--begin::Menu Nav-->
             <ul class="menu-nav">
-                {{-- <li class="menu-item menu-item-active" aria-haspopup="true">
+                <li class="menu-item menu-item-active" aria-haspopup="true">
                     <a href="dashboard" class="menu-link">
                         <span class="svg-icon menu-icon">
                             <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Layers.svg-->
@@ -47,7 +47,7 @@
                         </span>
                         <span class="menu-text">Dashboard</span>
                     </a>
-                </li> --}}
+                </li>
                 <li class="menu-section">
                     <h4 class="menu-text">List</h4>
                     <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
@@ -159,14 +159,6 @@
                                     <span class="menu-text">Report</span>
                                 </span>
                             </li>
-                            <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                                <a href="#" class="menu-link menu-toggle">
-                                    <i class="menu-bullet menu-bullet-dot">
-                                        <span></span>
-                                    </i>
-                                    <span class="menu-text">Order Report</span>
-                                </a>
-                            </li>
                         </ul>
                     </div>
                 </li>
@@ -197,14 +189,14 @@
                         </ul>
                     </div>
                 </li>
-                {{-- <li class="menu-item menu-item-submenu" aria-haspopup="true" >
+                <li class="menu-item menu-item-submenu" aria-haspopup="true" >
                     <a href="#" class="menu-link menu-toggle">
                         <span class="svg-icon menu-icon">
                             <!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
                             <!--end::Svg Icon-->
                         </span>
                     </a>
-                </li> --}}
+                </li>
             </ul>
             <!--end::Menu Nav-->
         </div>

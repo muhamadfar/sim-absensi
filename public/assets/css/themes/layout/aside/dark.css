@@ -28,10 +28,10 @@
         background: #637099; }
 
 .aside-menu {
-  background-color: #1e1e2d ; }
+  background-color: #D9D9D9 ; }
   .aside-menu .menu-nav > .menu-item > .menu-heading .menu-text,
   .aside-menu .menu-nav > .menu-item > .menu-link .menu-text {
-    color: #a2a3b7 ; }
+    color: #030306 ; }
   .aside-menu .menu-nav > .menu-item > .menu-heading .menu-icon,
   .aside-menu .menu-nav > .menu-item > .menu-link .menu-icon {
     color: #494b74 ; }
@@ -118,7 +118,7 @@
     transition: background-color 0.3s; }
     .aside-menu .menu-nav > .menu-item.menu-item-active > .menu-heading,
     .aside-menu .menu-nav > .menu-item.menu-item-active > .menu-link {
-      background-color: #1b1b28 ; }
+      background-color: #f36106 ; }
       .aside-menu .menu-nav > .menu-item.menu-item-active > .menu-heading .menu-text,
       .aside-menu .menu-nav > .menu-item.menu-item-active > .menu-link .menu-text {
         color: #ffffff ; }
