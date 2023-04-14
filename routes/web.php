@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MapelController;
+use App\Http\Controllers\RayonController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\RombelController;
 
@@ -19,7 +21,7 @@ Route::get('/kesiswaan', function () {
     return view('layouts.kesiswaan.app');
 });
 Route::get('/', function () {
-    return view('auth.login');
+    return view('layouts.kurikulum.app');
 });
 
 
@@ -39,9 +41,15 @@ Route::get('rombel/edit{id}', [RombelController::class, 'edit'])->name('rombel.e
 Route::post('rombel/update/{id}', [RombelController::class, 'update'])->name('rombel.update');
 Route::post('rombel/destroy/{id}', [RombelController::class, 'destroy'])->name('rombel.destroy');
 
-Route::get('rayon/index', [App\Http\Controllers\RayonController::class, 'index'])->name('rayon.index');
-Route::get('rayon/create', [App\Http\Controllers\RayonController::class, 'create'])->name('rayon.create');
-Route::post('rayon/store', [App\Http\Controllers\RayonController::class, 'store'])->name('rayon.store');
-Route::get('rayon/edit{id}', [App\Http\Controllers\RayonController::class, 'edit'])->name('rayon.edit');
-Route::post('rayon/update/{id}', [App\Http\Controllers\RayonController::class, 'update'])->name('rayon.update');
-Route::post('rayon/destroy/{id}', [App\Http\Controllers\RayonController::class, 'destroy'])->name('rayon.destroy');
+// DATA RAYON
+Route::get('rayon/index', [RayonController::class, 'index'])->name('rayon.index');
+Route::get('rayon/create', [RayonController::class, 'create'])->name('rayon.create');
+Route::post('rayon/store', [RayonController::class, 'store'])->name('rayon.store');
+Route::get('rayon/edit{id}', [RayonController::class, 'edit'])->name('rayon.edit');
+Route::post('rayon/update/{id}', [RayonController::class, 'update'])->name('rayon.update');
+Route::post('rayon/destroy/{id}', [RayonController::class, 'destroy'])->name('rayon.destroy');
+
+// DATA ABSEN
+Route::get('mapel/index', [MapelController::class, 'index'])->name('mapel.index');
+Route::get('mapel/create', [MapelController::class, 'create'])->name('mapel.create');
+Route::post('mapel/store', [MapelController::class, 'store'])->name('mapel.store');

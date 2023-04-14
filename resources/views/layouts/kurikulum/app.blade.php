@@ -3,7 +3,7 @@
 	<!--begin::Head-->
 	<head>
 		<meta charset="utf-8" />
-		<title>ABSENSI</title>
+		<title>KURIKULUM</title>
 		<meta name="description" content="Metronic admin dashboard live demo. Check out all the features of the admin panel. A large number of settings, additional services and widgets." />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 		<link rel="canonical" href="https://keenthemes.com/metronic" />
@@ -73,14 +73,14 @@
 		<div class="d-flex flex-column flex-root">
 			<!--begin::Page-->
 			<div class="d-flex flex-row flex-column-fluid page">
-                @include('layouts.kesiswaan.sidebar')
+                @include('layouts.kurikulum.sidebar')
 				<div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
 					<!--begin::Header-->
-					@include('layouts.kesiswaan.header')
+					@include('layouts.kurikulum.header')
 					<!--end::Header-->
 					<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
 						<!--begin::Subheader-->
-                        @include('layouts.kesiswaan.subheader')
+                        @include('layouts.kurikulum.subheader')
 						<!--end::Subheader-->
 						<div class="d-flex flex-column-fluid">
 							<!--begin::Container-->
