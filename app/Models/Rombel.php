@@ -15,6 +15,11 @@ class Rombel extends Model
 
      public function siswas()
     {
-       return $this->hasMany(Siswa::class); 
+       return $this->hasMany(Siswa::class);
+    }
+
+    public function mapel()
+    {
+        return $this->hasMany(Mapel::class);
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Mapel;
+use App\Models\Rombel;
 use Illuminate\Http\Request;
 
 class MapelController extends Controller
@@ -25,7 +26,8 @@ class MapelController extends Controller
      */
     public function create()
     {
-        return view('pages.kurikulum.mapel.create');
+        $rombels = Rombel::all();
+        return view('pages.kurikulum.mapel.create', compact('rombels'));
     }
 
     /**

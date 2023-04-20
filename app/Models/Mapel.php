@@ -11,4 +11,8 @@ class Mapel extends Model
     protected $table = 'mapels';
     protected $fillable = ['nama', 'jk', 'hari_id', 'jam', 'mapel', 'rombel_id'];
 
+    public function rombel()
+    {
+        return $this->belongsTo(Rombel::class);
+    }
 }

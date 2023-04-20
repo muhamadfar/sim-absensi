@@ -16,7 +16,7 @@ class Siswa extends Model
     {
         return $this->belongsTo(Rombel::class);
     }
-    
+
     public function rayon()
     {
         return $this->belongsTo(Rayon::class);
