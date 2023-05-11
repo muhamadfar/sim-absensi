@@ -25,7 +25,7 @@
     </div>
     <!--end::Brand-->
     <!--begin::Aside Menu-->
-    <div class="aside-menu-wrapper flex-column-fluid pt-1" style="background-color: rgb(41, 41, 118)" id="kt_aside_menu_wrapper">
+    <div class="aside-menu-wrapper flex-column-fluid pt-1" style="background-color:rgb(41, 41, 118)" id="kt_aside_menu_wrapper">
         <!--begin::Menu Container-->
         <div id="kt_aside_menu" class="aside-menu my-4" data-menu-vertical="1" data-menu-scroll="1" data-menu-dropdown-timeout="500">
             <!--begin::Menu Nav-->
