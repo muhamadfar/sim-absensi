@@ -17,11 +17,8 @@ use App\Http\Controllers\RombelController;
 |
 */
 
-Route::get('/kesiswaan', function () {
-    return view('layouts.kesiswaan.app');
-});
 Route::get('/', function () {
-    return view('layouts.kurikulum.app');
+    return view('layouts.kesiswaan.app');
 });
 
 
